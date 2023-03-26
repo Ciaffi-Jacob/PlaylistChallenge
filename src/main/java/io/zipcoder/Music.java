@@ -4,11 +4,11 @@ public class Music {
 
     private String[] playList;
 
-    public Music(String[] playList){
+    public Music(String[] playList) {
         this.playList = playList;
     }
 
-    public Integer selection(Integer startIndex, String selection){
+    public Integer selection(Integer startIndex, String selection) {
         //need var for how many presses
         //need up and down vars
         int numPresses;
@@ -17,8 +17,8 @@ public class Music {
 
         //need loop to check for how many upButton clicks
         for (int i = startIndex; i < playList.length; i++) {
-            if (selection.equals(playList[i])){
-                upButton =i;
+            if (selection.equals(playList[i])) {
+                upButton = i;
             }
         }
         //loop for downButton clicks
@@ -29,10 +29,21 @@ public class Music {
         }
         
 
+        //need if/else statements to determine which is fewer
+        if (upButton < downButton) {
+            numPresses = upButton;
+        }
+        else{
+            numPresses = downButton;
+        }
 
 
 
-        return null;
-    }
 
+
+        return numPresses;
 }
+}
+
+
+
