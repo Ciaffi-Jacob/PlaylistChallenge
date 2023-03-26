@@ -21,13 +21,21 @@ public class Music {
                 upButton = i;
             }
         }
-        //loop for downButton clicks
-        for (int i = startIndex; i < playList.length; i++) {
+        //loop for downButton clicks -- start at end and go backwards
+        for (int i = startIndex; i > 0; i--) {
             if (selection.equals(playList[i])) {
                 downButton = i;
             }
         }
-        
+
+        if (downButton == 0){
+            downButton = startIndex + playList.length - upButton;
+        }
+        if (upButton == 0){
+            upButton = downButton + playList.length - startIndex;
+        }
+
+
 
         //need if/else statements to determine which is fewer
         if (upButton < downButton) {
